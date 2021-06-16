@@ -61,4 +61,4 @@ add_action( 'wp_enqueue_scripts', 'give_crd_scripts', 15 );
 
 // Include Files
 
-include_once GIVE_RECURRING_CANCELLATION_INCLUDE_DIR . '/confirm-cancel-subscription.php';
+include_once GIVE_RECURRING_CANCELLATION_INCLUDE_DIR . '/process-cancel-subscription.php';
