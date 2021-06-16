@@ -81,6 +81,4 @@ function gr_process_cancellation( $postdata ){
     } catch ( Exception $e ) {
         wp_die( $e->getMessage(), __( 'Error', 'cancel-subscription' ), [ 'response' => 403 ] );
     }
-    print_r( $subscription_id );
-    exit;
 }
