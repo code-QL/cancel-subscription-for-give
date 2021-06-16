@@ -1,0 +1,103 @@
+.gr-cancel-subscription-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1200;
+    max-width: 100% !important;
+    background: #00000070;
+    margin: 0;
+    transition: all .5s ease-in-out;
+}
+
+.gr-cancel-subscription-modal.fade {
+    display: none;
+    opacity: 0;
+}
+.gr-cancel-subscription-modal.fade.in {
+    display: block;
+    opacity: 1;
+}
+.gr-modal-container {
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gr-cancel-subscription-content {
+    background: #fff;
+    padding: 30px 45px;
+    border-radius: 5px;
+    position: relative;
+}
+.gr-cancel-subscription-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1200;
+    max-width: 100% !important;
+    background: #00000070;
+    margin: 0;
+}
+.gr-title {
+    font-size: 30px;
+}
+
+.gr-cancel-subscription-head {
+    margin-bottom: 15px;
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
+.gr-close-confirm-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 22px;
+    font-weight:600;
+    line-height: 18px;
+    padding: 2px 5px 5px;
+    cursor: pointer;
+}
+.gr-close-confirm-modal:hover {
+    background-color:#f00;
+    color: #fff;
+}
+.gr-subtitle {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.gr-form-group {
+    margin: 15px 0;
+    display: block;
+    width: 100%;
+}   
+.gr-form-field, input.gr-form-field, textarea.gr-form-field {
+    border: 1px solid;
+    outline: none;
+}
+.gr-hide{
+    display: none !important;
+}
+.gr-button {
+    padding: 15px;
+    border: 2px solid #666;
+    border-radius: 4px;
+    background: #666;
+    color: #fff;
+    transition: .1s ease-in;
+}
+.gr-button:hover{
+    background: transparent;
+    color: #666;
+}
+.gr-button:disabled{
+    opacity:.5;
+    background: #666;
+    color: #fff;
+}
