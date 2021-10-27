@@ -1,12 +1,12 @@
 "use strict";
 
-let gr_modal = {
+let csfg_modal = {
     open: function(){
-        let modal = document.querySelector('.gr-cancel-subscription-modal');
+        let modal = document.querySelector('.csfg-cancel-subscription-modal');
         modal.classList.add('in');
     },
     close: function(){
-        let modal = document.querySelector('.gr-cancel-subscription-modal');
+        let modal = document.querySelector('.csfg-cancel-subscription-modal');
         modal.classList.remove('in');
     }
 }
@@ -20,36 +20,42 @@ document.addEventListener('readystatechange', e => {
                 e.preventDefault();
                 let currentElem  = e.target;
                 let subsId = currentElem.getAttribute('cancel-subscription');
-                gr_modal.open();
-                document.querySelector('#gr-subscription-id').value = subsId;
+                csfg_modal.open();
+                document.querySelector('#csfg-subscription-id').value = subsId;
             });
         });
         // Close Modal On Click
-        document.querySelectorAll('.gr-close-confirm-modal').forEach( el => {
+        document.querySelectorAll('.csfg-close-confirm-modal').forEach( el => {
             el.addEventListener( 'click', event => {
                 event.preventDefault();
-                gr_modal.close();
+                csfg_modal.close();
             });
         });
 
         // Hide and show textarea if Reason seleted Other
         let rs = document.querySelector('.give_cancel_reasons');
         let confirmCancelButton = document.querySelector('.give-confirm-cancel-subscription');
+
+        // Don't proceed with `cancel reasons` elements doesn't exists.
+        if ( ! rs ) {
+            return;
+        }
+        
         rs.addEventListener('change', event => {
             let cValue = event.target.value;
-            let otherReasonField = document.querySelector('.gr-other-reason'); 
+            let otherReasonField = document.querySelector('.csfg-other-reason'); 
             if( cValue == 'other' ){
                 confirmCancelButton.setAttribute( 'disabled', 'disabled' );
-                otherReasonField.classList.remove('gr-hide');
+                otherReasonField.classList.remove('csfg-hide');
             }
             else{
                 confirmCancelButton.removeAttribute( 'disabled' );
-                otherReasonField.classList.add('gr-hide');
+                otherReasonField.classList.add('csfg-hide');
             }
         });
         // Enable Button On Keyup in Other Reason Textarea
-        let gr_reason_text = document.querySelector('.gr-other-reason');
-        gr_reason_text.addEventListener('keyup', event => {
+        let csfg_reason_text = document.querySelector('.csfg-other-reason');
+        csfg_reason_text.addEventListener('keyup', event => {
             let val = event.target.value;
             val = val.trim()
             .replace( /  +/g, ' ' )       
